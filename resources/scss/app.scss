@@ -1,1 +1,25 @@
-@import '~bootstrap/scss/bootstrap';
+@import "~bootstrap/scss/bootstrap";
+
+header {
+    a {
+        text-decoration: none;
+    }
+}
+
+.jumbo {
+    background-image: url("../img/jumbotron.jpg");
+    height: 440px;
+}
+
+.brand {
+    background-color: rgb(48, 48, 250) {
+        text-decoration: none;
+    }
+}
+
+footer {
+    a {
+        color: lightgray;
+        text-decoration: none;
+    }
+}
