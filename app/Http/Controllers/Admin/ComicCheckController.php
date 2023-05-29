@@ -15,7 +15,8 @@ class ComicCheckController extends Controller
      */
     public function index()
     {
-        $Comics = Comic::all();
+        $comics = Comic::all();
+        return view('Admin.index', compact('comics'));
     }
 
     /**
@@ -47,7 +48,8 @@ class ComicCheckController extends Controller
      */
     public function show(Comic $comic)
     {
-        //
+
+        return view('Admin.show', compact('comic'));
     }
 
     /**

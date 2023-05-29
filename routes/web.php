@@ -2,7 +2,7 @@
 
 use App\Http\Controllers\PageCheckController;
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\Admin\ComicCheckController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,4 +16,4 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [PageCheckController::class, 'index']);
 
-route::resource('home', ComicsController::class);
+route::resource('Admin/home', ComicCheckController::class);

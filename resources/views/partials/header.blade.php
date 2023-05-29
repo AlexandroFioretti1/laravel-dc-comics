@@ -19,4 +19,7 @@
         </nav>
         <input type="search" placeholder="search">
     </div>
+    <div>
+        <a name="" id="" class="btn btn-primary" href="{{route('home.index')}}" role="button">ADMIN</a>
+    </div>
 </div>
