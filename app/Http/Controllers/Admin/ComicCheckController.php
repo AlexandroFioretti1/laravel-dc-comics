@@ -40,7 +40,7 @@ class ComicCheckController extends Controller
     {
         $data = [
             'title' => $request->title,
-            'descriptio' => $request->descriptio,
+            'description' => $request->description,
             'thumb' => $request->thumb,
             'price' => $request->price,
             'series' => $request->series,
@@ -48,7 +48,7 @@ class ComicCheckController extends Controller
             'type' => $request->type,
         ];
         Comic::create($data);
-        return to_route('comics.index');
+        return to_route('comic.index');
     }
 
     /**
@@ -94,7 +94,7 @@ class ComicCheckController extends Controller
             'type' => $request->type,
         ];
         $comic->update($data);
-        return to_route('comics.index');
+        return to_route('comic.index');
     }
 
     /**
@@ -106,6 +106,6 @@ class ComicCheckController extends Controller
     public function destroy(Comic $comic)
     {
         $comic->delete();
-        return to_route('comics.index');
+        return to_route('comic.index');
     }
 }

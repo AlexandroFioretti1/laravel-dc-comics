@@ -3,7 +3,9 @@
 @section('content')
 
 <div class="container">
-    <form>
+    <form action="{{route('comic.store', $comic->id)}}" method="post">
+        @csrf
+        @method('put')
         <div class="mb-3 row ">
             <label for="title" class="col-4 col-form-label">title</label>
             <input value="{{$comic->title}}" type=" text" class="form-control" name="title" id="title" placeholder="title">

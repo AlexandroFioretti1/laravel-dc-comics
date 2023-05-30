@@ -3,7 +3,7 @@
 @section('content')
 
 <div class="container">
-    <form action="{{route('comics.store')}}"></form>
+    <form method="post" action="{{route('comic.store')}}">
         @csrf
         <div class="mb-3 row">
             <label for="title" class="col-2 col-form-label text-white">Name</label>
@@ -20,7 +20,7 @@
         <div class="mb-3 row">
             <label for="description" class="col-2 col-form-label text-white">Name</label>
             <div class="col-10">
-                <input type="text" class="form-control" name="title" id="title" placeholder="Add a Title">
+                <input type="text" class="form-control" name="description" id="description" placeholder="Add a Title">
             </div>
         </div>
         <div class="mb-3 row">
