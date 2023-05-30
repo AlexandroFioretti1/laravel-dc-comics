@@ -16,4 +16,4 @@ use App\Http\Controllers\Admin\ComicCheckController;
 
 Route::get('/', [PageCheckController::class, 'index']);
 
-route::resource('Admin/home', ComicCheckController::class);
+Route::resource('admin/comic', ComicCheckController::class);

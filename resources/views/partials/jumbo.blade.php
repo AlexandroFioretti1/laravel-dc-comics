@@ -1,6 +1,4 @@
 <section class="jumbo">
 
 
-
-
 </section>
