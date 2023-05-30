@@ -3,7 +3,7 @@
 @section('content')
 
 <div class="container">
-    <form action="{{route('comic.store', $comic->id)}}" method="post">
+    <form action="{{route('comic.update', $comic->id)}}" method="post">
         @csrf
         @method('put')
         <div class="mb-3 row ">
@@ -14,10 +14,10 @@
             <label for="description" class="col-4 col-form-label" placeholder="Add Description">Description</label>
             <textarea value="{{$comic->description}}" name="description" id="description" cols="30" rows="10"></textarea>
         </div>
-        <div class="mb-3 d-flex justify-content-between align-content-center">
+        <div class="mb-3 d-flex align-items-center gap-3">
             <div><img src="{{$comic->thumb}}" width="450" alt=""></div>
-            <label for="thumb" class="col-4 col-form-label">thumb</label>
             <div class="w-100">
+                <label for="thumb" class="col-4 col-form-label">thumb</label>
                 <label for="thumb" class="col-4 col-form-label">Add Image</label>
                 <input value="{{$comic->thumb}}" type=" text" class="form-control" name="thumb" id="thumb" placeholder="thumb">
             </div>
