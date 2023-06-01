@@ -40,16 +40,8 @@ class ComicCheckController extends Controller
      */
     public function store(StoreComicRequest $request)
     {
-        $data = [
-            'title' => $request->title,
-            'description' => $request->description,
-            'thumb' => $request->thumb,
-            'price' => $request->price,
-            'series' => $request->series,
-            'sale_date' => $request->sale_date,
-            'type' => $request->type,
-        ];
-        Comic::create($data);
+        $val_data = $request->validated();
+        Comic::create($val_data);
         return to_route('comic.index');
     }
 
@@ -86,16 +78,8 @@ class ComicCheckController extends Controller
     public function update(UpdateComicRequest $request, Comic $comic)
     {
 
-        $data = [
-            'title' => $request->title,
-            'description' => $request->description,
-            'thumb' => $request->thumb,
-            'price' => $request->price,
-            'series' => $request->series,
-            'sale_date' => $request->sale_date,
-            'type' => $request->type,
-        ];
-        $comic->update($data);
+        $val_data = $request->validated();
+        $comic->update($val_data);
         return to_route('comic.index');
     }
 
@@ -109,5 +93,24 @@ class ComicCheckController extends Controller
     {
         $comic->delete();
         return to_route('comic.index');
+    }
+
+
+    /**
+     * 
+     * @return array
+     */
+    public function messages()
+    {
+        return [
+            'title.required' => 'Inserisci un titolo',
+            'title.required' => 'Il titolo deve essere minino 3 massimo 25 caratteri ',
+            'description.required' => 'Inserisci una descrizione',
+            'description.required' => 'La descrizione non può superare i 5000 caratteri',
+            'thumb.required' => 'Inserisci un immagine(link)',
+            'price.required' => 'Inserisci un prezzo',
+            'price.required' => 'Il prezzo deve essere tra 1 e max 999 ',
+            'series.required' => 'Inserisci la data di uscita',
+        ];
     }
 }
